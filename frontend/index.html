@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart Task Analyzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <h1>Smart Task Analyzer</h1>
+    <p>Enter tasks → Add to list → Analyze</p>
+  </header>
+
+  <main class="container">
+
+    <!-- LEFT SIDE -->
+    <section class="left">
+
+      <h2>Add a Task</h2>
+
+      <label>Task Name</label>
+      <input id="taskName" type="text" placeholder="e.g., Finish assignment">
+
+      <label>Due Date</label>
+      <input id="dueDate" type="date">
+
+      <label>Importance</label>
+      <select id="importance">
+          <option value="1">1 – Low</option>
+          <option value="2">2</option>
+          <option value="3" selected>3 – Medium</option>
+          <option value="4">4</option>
+          <option value="5">5 – High</option>
+      </select>
+
+      <label>Estimated Hours</label>
+      <input id="hours" type="number" step="0.5" value="1">
+
+      <button id="addBtn" onclick="addTask()">+ Add Task</button>
+      <button class="analyze-btn" onclick="analyzeTasks()">Analyze Tasks</button>
+
+      <h2>Tasks Entered</h2>
+
+      <table class="task-table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Due</th>
+            <th>Importance</th>
+            <th>Hours</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="taskTableBody"></tbody>
+      </table>
+
+    </section>
+
+    <!-- RIGHT SIDE -->
+    <section class="right">
+
+      <h2>Top Suggestions</h2>
+      <div id="suggestions"></div>
+
+      <h2>All Tasks (Sorted)</h2>
+      <div id="results" class="results"></div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <small>Smart Task Analyzer ©</small>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
