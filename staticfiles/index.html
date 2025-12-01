@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Smart Task Analyzer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Smart Task Analyzer</h1>
+    <p class="lead">Paste a JSON array of tasks (see sample) → pick strategy → Analyze</p>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <label for="strategy">Strategy</label>
+      <select id="strategy">
+        <option value="balanced">Balanced</option>
+        <option value="deadline-driven">Deadline Driven</option>
+        <option value="importance-first">Importance First</option>
+        <option value="quick-wins">Quick Wins</option>
+      </select>
+
+      <textarea id="taskInput" rows = 10 placeholder='Paste JSON array here (use Load Example)'></textarea>
+
+      <div class="controls">
+        <button id="loadExample">Load Example</button>
+        <button id="analyzeBtn">Analyze</button>
+        <button onclick="analyzeTasks()">Analyze Tasks</button>
+      </div>
+
+      <div id="errorBox" class="error" style="display:none;"></div>
+    </section>
+
+    <section class="right">
+      <h2>Top suggestions</h2>
+      <div id="suggestions" class="suggestions"></div>
+
+      <h2>All tasks (sorted)</h2>
+      <div id="results" class="results"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Smart Task Analyzer — built for assignment</small>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
